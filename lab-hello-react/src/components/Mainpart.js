@@ -1,38 +1,46 @@
 // We import other components to be able to use them inside of this component
-import ImageOne from "../images/icon1.png";
-import ImageTwo from "../images/icon2.png"
-import ImageThree from "../images/icon3.png";
-import ImageFour from "../images/icon4.png";
-
+import icon1 from "../images/icon1.png"
+import icon2 from "../images/icon2.png"
+import icon3 from "../images/icon3.png"
+import icon4 from "../images/icon4.png"
+import Card from './Card'
 
 
 function Mainpart() {
+
+    const cards = [
+        {
+            image: icon1,
+            title: 'Declarative',
+            text: 'React makes it painless to create interactive UIs.'
+        },
+        {
+            image: icon2,
+            title: 'Components',
+            text: 'Build incapsulated components that manage their state.'
+        },
+        {
+            image: icon3,
+            title: 'Single-Way',
+            text: 'A set of immutable values are passed to the components.'
+        },
+        {
+            image: icon4,
+            title: 'JSX',
+            text: 'Statically-typed. designed to run on modern browsers.'
+        },
+    ]
+
   return (
     <div className="mainpart">
     
-    <section>
-    <img src={ImageOne} alt="logo" />
-    <h3>Declarative</h3>
-    <p>React makes it painless to create interactive UIs.</p>
-    </section>
-
-    <section>
-    <img src={ImageTwo} alt="logo" />
-    <h3>Components</h3>
-    <p>Build incapsulated components that manage their state.</p>
-    </section>
-
-    <section>
-      <img src={ImageThree} alt="logo" />
-      <h3>Single-Way</h3>
-      <p>A set of immutable values are passed to the components.</p>
-      </section>
-
-      <section>
-      <img src={ImageFour} alt="logo" />
-      <h3>JSX</h3>
-      <p>Statically-typed. designed to run on modern browsers.</p>
-      </section>
+    {cards.map((card, index) => (
+        <Card
+          image={card.image}
+          title={card.title}
+          text={card.text}
+        />
+      ))}
     </div>
   );
 }
