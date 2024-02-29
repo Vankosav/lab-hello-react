@@ -1,10 +1,13 @@
+const paragraph = "You will learn how to use the most popular frontend library and become a super Ninja developer.";
+const headline = "Say hello to ReactJS";
+const button = "Awesome!";
 function Headline() {
     return (
       <div className="headline">
-        <h1>Say hello to ReactJS</h1>
-        <p>You will learn how to use the most popular frontend library and become a super Ninja developer.</p>
+        <h1>{headline}</h1>
+        <p>{paragraph}</p>
 
-        <button>Awesome!</button>
+        <button>{button}</button>
       </div>
     );
   }
